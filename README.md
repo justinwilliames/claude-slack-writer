@@ -44,13 +44,16 @@ Trigger phrases Claude will recognise:
 
 The skill will produce a ready-to-paste message in a code block, with one or two short notes underneath if any placeholders need adjustment.
 
-## Tip — enable Slack markup for your own composing
+## Slack's markup preference — what to know
 
-This skill doesn't use markup in its output because your audience probably hasn't enabled the preference. But if you want `*bold*`, `_italic_`, `~strike~`, and `` `code` `` to work when you type directly in Slack:
+Slack has a per-user "Format messages with markup" preference (Profile → Preferences → Advanced). It's an **all-or-nothing toggle**:
 
-**Slack desktop / web:** Profile photo → **Preferences** → **Advanced** → toggle on **"Format messages with markup"**.
+- **ON:** type `*bold*`, `_italic_`, `~strike~`, `` `code` `` directly and they render — but the WYSIWYG toolbar and ⌘+B shortcut stop working entirely.
+- **OFF (the default):** the toolbar and ⌘+B work as normal, but typed asterisks render literally.
 
-It's a per-user setting (not workspace-wide), so your teammates won't see the difference unless they enable it themselves.
+This skill defaults to asterisk-free output so it pastes cleanly for users in either mode. If you've personally enabled markup mode and want `*bold*` in your drafts, just tell the assistant — it'll include markup as requested.
+
+The preference is per-user, not workspace-wide. Your audience will see whatever you send according to *their* setting, not yours.
 
 ## Contributing
 

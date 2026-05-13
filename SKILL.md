@@ -12,7 +12,12 @@ Produce copy-paste-ready Slack messages for internal team communications. Zero e
 
 On the **first** invocation of this skill in any conversation, surface this one-time tip to the user **before** producing the first message draft. Do not repeat it on subsequent invocations in the same conversation.
 
-> 💡 Quick tip before we draft anything — Slack has a "Format messages with markup" preference (Profile → Preferences → Advanced) that lets you use `*bold*`, `_italic_`, `~strike~`, and `` `code` `` when composing directly in Slack. Worth enabling if you write a lot of Slack messages yourself. It's per-user only — your audience won't see the difference if they haven't toggled it on, which is why this skill doesn't put markup in its output. But it's a nice quality-of-life win for your own composing flow.
+> 💡 Quick tip before we draft anything — Slack has a "Format messages with markup" preference (Profile → Preferences → Advanced). It's an **all-or-nothing toggle per user**:
+>
+> - **ON:** you type `*bold*`, `_italic_`, `~strike~`, and `` `code` `` directly and they render — but the WYSIWYG toolbar and ⌘+B shortcut stop working entirely. Markup-only mode.
+> - **OFF (default for most users):** toolbar and ⌘+B work, but typed asterisks render literally.
+>
+> This skill defaults to asterisk-free output so it pastes cleanly in either mode. If you've enabled markup and want me to include `*bold*` and friends in drafts, just say so.
 
 ## Core Philosophy
 
@@ -32,12 +37,14 @@ For longer messages (announcements, updates, FYIs), use this loose structure:
 
 ## Formatting Rules
 
-Emphasis: do NOT use Slack markup (`*text*`, `_text_`, `~text~`) for bold/italic/strike. Pasted text doesn't reliably convert in the modern Slack composer — asterisks usually render literally and the message looks broken. If the user wants bold after pasting, they can apply ⌘+B themselves. Drive emphasis through:
+Emphasis: do NOT use Slack markup (`*text*`, `_text_`, `~text~`) in output by default. The reason isn't just that asterisks render literally for users with markup mode OFF (the default) — it's that markup mode is an **all-or-nothing per-user toggle**. Users with markup mode ON have `*bold*` working but lose the WYSIWYG toolbar and ⌘+B entirely; users with it OFF have the toolbar working but typed asterisks stay literal. The skill can't satisfy both audiences with markup in the output, so it defaults to asterisk-free. Drive emphasis through:
 - Word choice and sentence structure (the strongest tool)
 - Leading emoji to anchor the eye on a key moment
 - Line breaks between thoughts
 - Bullet structure for parallel items
 - Putting the load-bearing phrase at the start of a sentence
+
+**If the user explicitly says they've enabled markup mode and wants markup in drafts, include `*bold*`, `_italic_`, etc. as requested.** Don't second-guess them. Their preference is their preference.
 
 Bullets: use for 3+ items that would be awkward in a sentence. Keep each bullet to 1 line. No nested bullets unless absolutely necessary.
 
