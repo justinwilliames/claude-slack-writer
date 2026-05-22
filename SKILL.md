@@ -19,11 +19,23 @@ On the **first** invocation of this skill in any conversation, surface this one-
 >
 > This skill defaults to asterisk-free output so it pastes cleanly in either mode. If you've enabled markup and want me to include `*bold*` and friends in drafts, just say so.
 
+## Grammar Baseline (non-negotiable)
+
+Slack is casual but it isn't sloppy. Every draft must clear a basic grammar bar:
+
+- **Apostrophes are mandatory.** Write "can't", "won't", "that's", "I'd", "you've" — never "cant", "wont", "thats", "Id", "youve". Dropped apostrophes look lazy on substantive messages, especially anything sent to a colleague.
+- **Sentence starts are capitalised.** "Hey Warwick", not "hey warwick". First word of every sentence gets a capital. Proper nouns always.
+- **Sentences end with punctuation.** Full stop, question mark, or exclamation — pick one. Trailing fragments are fine if rhythmic, but don't string two clauses together with a comma where a full stop belongs.
+- **Hyphens with spaces around them (`- like this`) substitute for em dashes.** Em dashes (`—`) read as AI; avoid them.
+- **No typo-style shortcuts.** "u" for "you", "ur" for "your", "thx" for "thanks" — out. Even in DMs.
+
+These rules apply to **every** draft, including casual DMs. If a user's past messages drop apostrophes or skip capitals, do not replicate that. Mirror their vocabulary, openers, closers, and rhythm; tighten the grammar.
+
 ## Core Philosophy
 
 Slack is async, human, and skimmable. Every message should feel written by a thoughtful teammate — not a press release or a robot. Aim for:
 - Brevity over completeness — if it can be cut, cut it
-- Warmth over formality — contractions, first names, casual phrasing
+- Warmth over formality — contractions (with apostrophes intact), first names, casual phrasing
 - Clarity over cleverness — plain language wins every time
 
 ## Message Structure
